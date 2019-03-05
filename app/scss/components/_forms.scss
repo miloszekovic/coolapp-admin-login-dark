@@ -1,0 +1,95 @@
+.wrapper-forms {
+    background: $dark;
+    background: -webkit-linear-gradient(-290deg, $darker 55%, $dark 45%);
+    background: -o-linear-gradient(-290deg, $darker 55%, $dark 45%);
+    background: -moz-linear-gradient(-290deg, $darker 55%, $dark 45%);
+    background: linear-gradient(-290deg, $darker 55%, $dark 45%);
+    display: grid;
+    grid-template-rows: auto 7rem;
+    align-items: center;
+    grid-area: forms;
+
+    .forms-container {
+
+        @media screen and (max-width: 1239px) {
+            padding: 3rem 0;
+        }
+        
+        @media screen and (max-width: 600px) {
+            padding: 3rem;
+        }
+
+        div {
+            display: block;
+            margin: $center;
+            width: 450px;
+            padding: 3rem 0;
+            
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
+
+            h3 {
+                padding: 0 0 3rem 5rem;
+
+                @media screen and (max-width: 600px) {
+                    padding-left: 3rem;
+                }
+            }
+
+            ul {
+                background: $dark;
+                padding: 3rem 5rem;
+                @include rounded--corners($size: 6rem 3rem);
+
+                @media screen and (max-width: 600px) {
+                    padding: 2rem 3rem;
+                }
+
+                li {
+                    margin: 2rem 0;
+                    text-align: center;
+
+                    a {
+                        @include font-size(1.3, 1.3);
+                    }
+
+                    input {
+                        @extend .fade;
+                        width: 100%;
+                        padding: 1rem 3rem;
+                        background: $dark-input;
+                        @include rounded--corners($size: 6rem 3rem);
+                        border-bottom: 3px solid $dark-input;
+                        color: $light;
+
+                        @media screen and (max-width: 600px) {
+                            padding: 1rem 2rem;
+                        }
+
+                        &:hover {
+                            border-bottom: 3px solid $orange;
+                        }
+
+                        &:focus {
+                            border-bottom: 3px solid $pink;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copy {
+        align-self: start;
+        text-align: center;
+        @include font-size(1.3, 1.3);
+        color: $light;
+        padding-top: 25px;
+
+        a {
+            color: $light;
+            font-style: italic;
+        }
+    }
+}
